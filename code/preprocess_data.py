@@ -32,7 +32,7 @@ for i, row in wavs.iterrows():
     mel.append(get_logMel(y))
     tgram.append(get_tempogram(y))
     fnames.append(row.fname)
-    if i % 500 == 0:
+    if (i % 500 == 0) or ((i + 1) == len(wavs)):
         print(i)
         print("File {} processed after {}s".format(i, time.time() - tic))
         with open('fname.pkl', 'wb') as fn:
